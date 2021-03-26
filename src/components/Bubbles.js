@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Pack } from "@potion/layout";
 import { Svg, Circle } from "@potion/element";
 
+
 const Bubbles = ({ colors }) => {
   const [bubbleData, setBubbleData] = useState([]);
   useEffect(() => {
@@ -11,7 +12,6 @@ const Bubbles = ({ colors }) => {
     }));
     setBubbleData(generateBubbleData);
   }, [colors]);
-
   return (
     <div className="bubble-wrap">
       <p>bubbles</p>
@@ -32,6 +32,7 @@ const Bubbles = ({ colors }) => {
                 if (i < colors.length) {
                   return (
                     <Circle
+                      data-testid="circles"
                       key={key}
                       cx={x}
                       cy={y}
@@ -49,5 +50,4 @@ const Bubbles = ({ colors }) => {
     </div>
   );
 };
-
 export default Bubbles;
